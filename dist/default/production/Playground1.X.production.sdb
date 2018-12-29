@@ -1,0 +1,300 @@
+[p LITE_MODE AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F14K50 ]
+[d frameptr 4065 ]
+"112 C:\Users\User\MPLABXProjects\Playground1.X\lcd.c
+[e E2767 . `uc
+mENUM_LcdDummy 0
+mENUM_LcdLineOne 1
+mENUM_LcdLineTwo 2
+mENUM_LcdLineThree 3
+mENUM_LcdLineFour 4
+mENUM_LcdMaxLines 5
+]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"12 C:\Users\User\MPLABXProjects\Playground1.X\HD44780.c
+[v _HD44780_init HD44780_init `(v  1 e 1 0 ]
+"79
+[v _write_mode_on write_mode_on `(v  1 e 1 0 ]
+"87
+[v _select_instruction_register select_instruction_register `(v  1 e 1 0 ]
+"95
+[v _enable_pulse enable_pulse `(v  1 e 1 0 ]
+"144 C:\Users\User\MPLABXProjects\Playground1.X\lcd.c
+[v _LCD_Clear LCD_Clear `(v  1 e 1 0 ]
+"169
+[v _LCD_GoToLine LCD_GoToLine `(v  1 e 1 0 ]
+"195
+[v _LCD_GoToNextLine LCD_GoToNextLine `(v  1 e 1 0 ]
+"258
+[v _LCD_CmdWrite LCD_CmdWrite `(v  1 e 1 0 ]
+"291
+[v _LCD_DisplayChar LCD_DisplayChar `(v  1 e 1 0 ]
+"806
+[v _lcd_DataWrite lcd_DataWrite `(v  1 s 1 lcd_DataWrite ]
+"839
+[v _lcd_BusyCheck lcd_BusyCheck `(v  1 s 1 lcd_BusyCheck ]
+"888
+[v _lcd_Reset lcd_Reset `(v  1 s 1 lcd_Reset ]
+"917
+[v _lcd_SendNibble lcd_SendNibble `(v  1 s 1 lcd_SendNibble ]
+"935
+[v _lcd_SendCmdSignals lcd_SendCmdSignals `(v  1 s 1 lcd_SendCmdSignals ]
+"956
+[v _lcd_SendDataSignals lcd_SendDataSignals `(v  1 s 1 lcd_SendDataSignals ]
+"7 C:\Users\User\MPLABXProjects\Playground1.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"50 C:\Users\User\MPLABXProjects\Playground1.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"57
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"57 C:\Users\User\MPLABXProjects\Playground1.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"1971 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f14k50.h
+[v _WPUA WPUA `VEuc  1 e 1 @3959 ]
+"2004
+[v _WPUB WPUB `VEuc  1 e 1 @3960 ]
+"2127
+[v _ANSEL ANSEL `VEuc  1 e 1 @3966 ]
+"2172
+[v _ANSELH ANSELH `VEuc  1 e 1 @3967 ]
+[s S176 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"2342
+[s S182 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 SDI 1 0 :1:4 
+`uc 1 RX 1 0 :1:5 
+`uc 1 SCL 1 0 :1:6 
+`uc 1 TX 1 0 :1:7 
+]
+[s S188 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 SDA 1 0 :1:4 
+`uc 1 DT 1 0 :1:5 
+`uc 1 SCK 1 0 :1:6 
+`uc 1 CK 1 0 :1:7 
+]
+[s S194 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 AN10 1 0 :1:4 
+`uc 1 AN11 1 0 :1:5 
+]
+[u S198 . 1 `S176 1 . 1 0 `S182 1 . 1 0 `S188 1 . 1 0 `S194 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES198  1 e 1 @3969 ]
+"2711
+[v _LATA LATA `VEuc  1 e 1 @3977 ]
+"2753
+[v _LATB LATB `VEuc  1 e 1 @3978 ]
+"2819
+[v _LATC LATC `VEuc  1 e 1 @3979 ]
+"2931
+[v _TRISA TRISA `VEuc  1 e 1 @3986 ]
+"3013
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+"3143
+[v _TRISC TRISC `VEuc  1 e 1 @3988 ]
+"3365
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @3995 ]
+[s S148 . 1 `uc 1 SWDTEN 1 0 :1:0 
+]
+"6473
+[s S150 . 1 `uc 1 SWDTE 1 0 :1:0 
+]
+[u S152 . 1 `S148 1 . 1 0 `S150 1 . 1 0 ]
+[v _WDTCONbits WDTCONbits `VES152  1 e 1 @4049 ]
+"6488
+[v _OSCCON2 OSCCON2 `VEuc  1 e 1 @4050 ]
+"6520
+[v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
+[s S34 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 NOT_RABPU 1 0 :1:7 
+]
+"7065
+[s S37 . 1 `uc 1 RABIP 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 TMR0IP 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INTEDG2 1 0 :1:4 
+`uc 1 INTEDG1 1 0 :1:5 
+`uc 1 INTEDG0 1 0 :1:6 
+`uc 1 nRABPU 1 0 :1:7 
+]
+[s S46 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 RABPU 1 0 :1:7 
+]
+[u S49 . 1 `S34 1 . 1 0 `S37 1 . 1 0 `S46 1 . 1 0 ]
+[v _INTCON2bits INTCON2bits `VES49  1 e 1 @4081 ]
+[s S69 . 1 `uc 1 RABIF 1 0 :1:0 
+`uc 1 INT0IF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 RABIE 1 0 :1:3 
+`uc 1 INT0IE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE_GIEL 1 0 :1:6 
+`uc 1 GIE_GIEH 1 0 :1:7 
+]
+"7142
+[s S78 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 INT0F 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INT0E 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+[s S87 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 GIEL 1 0 :1:6 
+`uc 1 GIEH 1 0 :1:7 
+]
+[u S91 . 1 `S69 1 . 1 0 `S78 1 . 1 0 `S87 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES91  1 e 1 @4082 ]
+"8414
+[v _LATB4 LATB4 `VEb  1 e 0 @31828 ]
+"8417
+[v _LATB5 LATB5 `VEb  1 e 0 @31829 ]
+"8420
+[v _LATB6 LATB6 `VEb  1 e 0 @31830 ]
+"8423
+[v _LATB7 LATB7 `VEb  1 e 0 @31831 ]
+"8435
+[v _LATC3 LATC3 `VEb  1 e 0 @31835 ]
+"8438
+[v _LATC4 LATC4 `VEb  1 e 0 @31836 ]
+"8441
+[v _LATC5 LATC5 `VEb  1 e 0 @31837 ]
+"8444
+[v _LATC6 LATC6 `VEb  1 e 0 @31838 ]
+"68 C:\Users\User\MPLABXProjects\Playground1.X\lcd.c
+[v _VAR_LcdTrackLineNum_U8 VAR_LcdTrackLineNum_U8 `uc  1 e 1 0 ]
+"69
+[v _VAR_LcdTrackCursorPos_U8 VAR_LcdTrackCursorPos_U8 `uc  1 e 1 0 ]
+[s S238 . 3 `uc 1 mvar_MaxSupportedLines_U8 1 0 `uc 1 mvar_MaxSupportedChars_U8 1 1 `uc 1 mvar_LcdMode_U8 1 2 ]
+"70
+[v _STK_LCDConfig STK_LCDConfig `S238  1 e 3 0 ]
+"71
+[v _ARR_LcdLineNumAddress_U8 ARR_LcdLineNumAddress_U8 `[5]uc  1 e 5 0 ]
+"7 C:\Users\User\MPLABXProjects\Playground1.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"35
+} 0
+"50 C:\Users\User\MPLABXProjects\Playground1.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"55
+} 0
+"57 C:\Users\User\MPLABXProjects\Playground1.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"94
+} 0
+"57 C:\Users\User\MPLABXProjects\Playground1.X\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"65
+} 0
+"291 C:\Users\User\MPLABXProjects\Playground1.X\lcd.c
+[v _LCD_DisplayChar LCD_DisplayChar `(v  1 e 1 0 ]
+{
+[v LCD_DisplayChar@var_lcdData_u8 var_lcdData_u8 `uc  1 a 1 wreg ]
+[v LCD_DisplayChar@var_lcdData_u8 var_lcdData_u8 `uc  1 a 1 wreg ]
+"293
+[v LCD_DisplayChar@var_lcdData_u8 var_lcdData_u8 `uc  1 a 1 2 ]
+"305
+} 0
+"806
+[v _lcd_DataWrite lcd_DataWrite `(v  1 s 1 lcd_DataWrite ]
+{
+[v lcd_DataWrite@dat dat `uc  1 a 1 wreg ]
+[v lcd_DataWrite@dat dat `uc  1 a 1 wreg ]
+"808
+[v lcd_DataWrite@dat dat `uc  1 a 1 1 ]
+"822
+} 0
+"956
+[v _lcd_SendDataSignals lcd_SendDataSignals `(v  1 s 1 lcd_SendDataSignals ]
+{
+"965
+} 0
+"195
+[v _LCD_GoToNextLine LCD_GoToNextLine `(v  1 e 1 0 ]
+{
+"204
+} 0
+"258
+[v _LCD_CmdWrite LCD_CmdWrite `(v  1 e 1 0 ]
+{
+[v LCD_CmdWrite@var_lcdCmd_u8 var_lcdCmd_u8 `uc  1 a 1 wreg ]
+[v LCD_CmdWrite@var_lcdCmd_u8 var_lcdCmd_u8 `uc  1 a 1 wreg ]
+"260
+[v LCD_CmdWrite@var_lcdCmd_u8 var_lcdCmd_u8 `uc  1 a 1 1 ]
+"275
+} 0
+"917
+[v _lcd_SendNibble lcd_SendNibble `(v  1 s 1 lcd_SendNibble ]
+{
+[v lcd_SendNibble@var var `uc  1 a 1 wreg ]
+[v lcd_SendNibble@var var `uc  1 a 1 wreg ]
+"919
+[v lcd_SendNibble@var var `uc  1 a 1 0 ]
+"923
+} 0
+"935
+[v _lcd_SendCmdSignals lcd_SendCmdSignals `(v  1 s 1 lcd_SendCmdSignals ]
+{
+"944
+} 0
+"839
+[v _lcd_BusyCheck lcd_BusyCheck `(v  1 s 1 lcd_BusyCheck ]
+{
+"841
+[v lcd_BusyCheck@busyflag busyflag `uc  1 a 1 0 ]
+"873
+} 0
+"12 C:\Users\User\MPLABXProjects\Playground1.X\HD44780.c
+[v _HD44780_init HD44780_init `(v  1 e 1 0 ]
+{
+"77
+} 0
+"79
+[v _write_mode_on write_mode_on `(v  1 e 1 0 ]
+{
+"81
+} 0
+"87
+[v _select_instruction_register select_instruction_register `(v  1 e 1 0 ]
+{
+"89
+} 0
+"95
+[v _enable_pulse enable_pulse `(v  1 e 1 0 ]
+{
+"99
+} 0
