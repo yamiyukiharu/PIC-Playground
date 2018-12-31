@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/mcc.c"
+# 1 "mcc_generated_files/pin_manager.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/mcc.c" 2
-# 47 "mcc_generated_files/mcc.c"
-# 1 "mcc_generated_files/mcc.h" 1
-# 49 "mcc_generated_files/mcc.h"
+# 1 "mcc_generated_files/pin_manager.c" 2
+# 49 "mcc_generated_files/pin_manager.c"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4988,158 +4986,56 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 49 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/device_config.h" 1
-# 50 "mcc_generated_files/mcc.h" 2
+# 49 "mcc_generated_files/pin_manager.c" 2
 
 # 1 "mcc_generated_files/pin_manager.h" 1
 # 198 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 # 210 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 51 "mcc_generated_files/mcc.h" 2
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 1 3
-# 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 135 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uintptr_t;
-# 150 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long intptr_t;
-# 166 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef signed char int8_t;
-
-
-
-
-typedef short int16_t;
-
-
-
-
-typedef long int32_t;
-
-
-
-
-
-typedef long long int64_t;
-# 191 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long intmax_t;
-
-
-
-
-
-typedef unsigned char uint8_t;
-
-
-
-
-typedef unsigned short uint16_t;
-
-
-
-
-typedef unsigned long uint32_t;
-
-
-
-
-
-typedef unsigned long long uint64_t;
-# 227 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long long uintmax_t;
-# 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
-
-
-typedef int8_t int_fast8_t;
-
-typedef int64_t int_fast64_t;
-
-
-typedef int8_t int_least8_t;
-typedef int16_t int_least16_t;
-typedef int32_t int_least32_t;
-
-typedef int64_t int_least64_t;
-
-
-typedef uint8_t uint_fast8_t;
-
-typedef uint64_t uint_fast64_t;
-
-
-typedef uint8_t uint_least8_t;
-typedef uint16_t uint_least16_t;
-typedef uint32_t uint_least32_t;
-
-typedef uint64_t uint_least64_t;
-# 131 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\bits/stdint.h" 1 3
-typedef int32_t int_fast16_t;
-typedef int32_t int_fast32_t;
-typedef uint32_t uint_fast16_t;
-typedef uint32_t uint_fast32_t;
-# 131 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
-# 52 "mcc_generated_files/mcc.h" 2
+# 50 "mcc_generated_files/pin_manager.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\stdbool.h" 1 3
-# 53 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/interrupt_manager.h" 1
-# 110 "mcc_generated_files/interrupt_manager.h"
-void INTERRUPT_Initialize (void);
-# 54 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/tmr0.h" 1
-# 106 "mcc_generated_files/tmr0.h"
-void TMR0_Initialize(void);
-# 135 "mcc_generated_files/tmr0.h"
-void TMR0_StartTimer(void);
-# 167 "mcc_generated_files/tmr0.h"
-void TMR0_StopTimer(void);
-# 203 "mcc_generated_files/tmr0.h"
-uint16_t TMR0_ReadTimer(void);
-# 242 "mcc_generated_files/tmr0.h"
-void TMR0_WriteTimer(uint16_t timerVal);
-# 278 "mcc_generated_files/tmr0.h"
-void TMR0_Reload(void);
-# 296 "mcc_generated_files/tmr0.h"
-void TMR0_ISR(void);
-# 314 "mcc_generated_files/tmr0.h"
-void TMR0_CallBack(void);
-# 332 "mcc_generated_files/tmr0.h"
- void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 350 "mcc_generated_files/tmr0.h"
-extern void (*TMR0_InterruptHandler)(void);
-# 368 "mcc_generated_files/tmr0.h"
-void TMR0_DefaultInterruptHandler(void);
-# 55 "mcc_generated_files/mcc.h" 2
-# 70 "mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(void);
-# 83 "mcc_generated_files/mcc.h"
-void OSCILLATOR_Initialize(void);
-# 47 "mcc_generated_files/mcc.c" 2
+# 51 "mcc_generated_files/pin_manager.c" 2
 
 
 
-void SYSTEM_Initialize(void)
+
+
+
+void PIN_MANAGER_Initialize(void)
 {
 
-    INTERRUPT_Initialize();
-    PIN_MANAGER_Initialize();
-    OSCILLATOR_Initialize();
-    TMR0_Initialize();
+
+
+    LATA = 0x00;
+    LATB = 0xF0;
+    LATC = 0xF8;
+
+
+
+
+    TRISA = 0x30;
+    TRISB = 0x00;
+    TRISC = 0x07;
+
+
+
+
+    ANSEL = 0x78;
+    ANSELH = 0x00;
+
+
+
+
+    WPUB = 0x00;
+    WPUA = 0x00;
+    INTCON2bits.nRABPU = 1;
+# 94 "mcc_generated_files/pin_manager.c"
 }
 
-void OSCILLATOR_Initialize(void)
+void PIN_MANAGER_IOC(void)
 {
 
-    OSCCON = 0x60;
-
-    OSCCON2 = 0x04;
-
-    OSCTUNE = 0x00;
+    INTCONbits.RABIF = 0;
 }

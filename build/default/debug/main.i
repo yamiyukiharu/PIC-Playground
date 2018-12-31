@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/mcc.c"
+# 1 "main.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,9 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/mcc.c" 2
-# 47 "mcc_generated_files/mcc.c"
-# 1 "mcc_generated_files/mcc.h" 1
-# 49 "mcc_generated_files/mcc.h"
+# 1 "main.c" 2
+# 1 "./mcc_generated_files/mcc.h" 1
+# 49 "./mcc_generated_files/mcc.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4988,17 +4987,17 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 49 "mcc_generated_files/mcc.h" 2
+# 49 "./mcc_generated_files/mcc.h" 2
 
-# 1 "mcc_generated_files/device_config.h" 1
-# 50 "mcc_generated_files/mcc.h" 2
+# 1 "./mcc_generated_files/device_config.h" 1
+# 50 "./mcc_generated_files/mcc.h" 2
 
-# 1 "mcc_generated_files/pin_manager.h" 1
-# 198 "mcc_generated_files/pin_manager.h"
+# 1 "./mcc_generated_files/pin_manager.h" 1
+# 198 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 210 "mcc_generated_files/pin_manager.h"
+# 210 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 51 "mcc_generated_files/mcc.h" 2
+# 51 "./mcc_generated_files/mcc.h" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 3
@@ -5083,63 +5082,82 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 131 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
-# 52 "mcc_generated_files/mcc.h" 2
+# 52 "./mcc_generated_files/mcc.h" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\stdbool.h" 1 3
-# 53 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/interrupt_manager.h" 1
-# 110 "mcc_generated_files/interrupt_manager.h"
-void INTERRUPT_Initialize (void);
-# 54 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/tmr0.h" 1
-# 106 "mcc_generated_files/tmr0.h"
-void TMR0_Initialize(void);
-# 135 "mcc_generated_files/tmr0.h"
-void TMR0_StartTimer(void);
-# 167 "mcc_generated_files/tmr0.h"
-void TMR0_StopTimer(void);
-# 203 "mcc_generated_files/tmr0.h"
-uint16_t TMR0_ReadTimer(void);
-# 242 "mcc_generated_files/tmr0.h"
-void TMR0_WriteTimer(uint16_t timerVal);
-# 278 "mcc_generated_files/tmr0.h"
-void TMR0_Reload(void);
-# 296 "mcc_generated_files/tmr0.h"
-void TMR0_ISR(void);
-# 314 "mcc_generated_files/tmr0.h"
-void TMR0_CallBack(void);
-# 332 "mcc_generated_files/tmr0.h"
- void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 350 "mcc_generated_files/tmr0.h"
-extern void (*TMR0_InterruptHandler)(void);
-# 368 "mcc_generated_files/tmr0.h"
-void TMR0_DefaultInterruptHandler(void);
-# 55 "mcc_generated_files/mcc.h" 2
-# 70 "mcc_generated_files/mcc.h"
+# 53 "./mcc_generated_files/mcc.h" 2
+# 68 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 83 "mcc_generated_files/mcc.h"
+# 81 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 47 "mcc_generated_files/mcc.c" 2
+# 1 "main.c" 2
+
+# 1 "./lcd.h" 1
+# 40 "./lcd.h"
+# 1 "./stdutils.h" 1
+# 58 "./stdutils.h"
+typedef signed char sint8_t;
+typedef unsigned char uint8_t;
+
+typedef signed int sint16_t;
+
+typedef signed long int sint32_t;
+typedef unsigned long int uint32_t;
+# 40 "./lcd.h" 2
+# 139 "./lcd.h"
+typedef enum{
+ mENUM_LcdDummy,
+ mENUM_LcdLineOne,
+ mENUM_LcdLineTwo,
+ mENUM_LcdLineThree,
+ mENUM_LcdLineFour,
+ mENUM_LcdMaxLines
+}LCD_Lines;
+
+
+typedef struct{
+ uint8_t mvar_MaxSupportedLines_U8;
+ uint8_t mvar_MaxSupportedChars_U8;
+ uint8_t mvar_LcdMode_U8;
+}LcdConfig_st;
+# 164 "./lcd.h"
+void LCD_Init(uint8_t var_lcdMode_u8, uint8_t var_lcdNoOfLines_u8, uint8_t var_MaxCharsPerLine_u8);
+void LCD_CmdWrite( uint8_t var_lcdCmd_u8);
+void LCD_DisplayChar( char var_lcdData_u8);
+void LCD_Clear();
+void LCD_GoToLine(uint8_t var_lineNumber_u8);
+void LCD_GoToNextLine();
+void LCD_SetCursor(uint8_t var_lineNumber_u8, uint8_t var_charNumber_u8);
+void LCD_DisplayString(char *ptr_stringPointer_u8);
+void LCD_ScrollMessage(uint8_t var_lineNumber_u8, char *ptr_msgPointer_u8);
+void LCD_DisplayDecimalNumber(uint32_t var_DecNumber_u32, uint8_t var_numOfDigitsToDisplay_u8);
+void LCD_DisplayHexNumber(uint32_t var_hexNumber_u32,uint8_t var_numOfDigitsToDisplay_u8);
+void LCD_DisplayBinaryNumber(uint32_t var_binNumber_u32, uint8_t var_numOfBitsToDisplay_u8);
+void LCD_DisplayFloatNumber(float var_floatNum_f32);
+void LCD_Printf(const char *argList, ...);
+# 2 "main.c" 2
+
+# 1 "./HD44780.h" 1
+# 25 "./HD44780.h"
+void HD44780_init(void);
+# 3 "main.c" 2
 
 
 
-void SYSTEM_Initialize(void)
+
+void main(void)
 {
 
-    INTERRUPT_Initialize();
-    PIN_MANAGER_Initialize();
-    OSCILLATOR_Initialize();
-    TMR0_Initialize();
-}
+    SYSTEM_Initialize();
+    WDTCONbits.SWDTEN = 0;
+# 26 "main.c"
+    HD44780_init();
 
-void OSCILLATOR_Initialize(void)
-{
 
-    OSCCON = 0x60;
 
-    OSCCON2 = 0x04;
-
-    OSCTUNE = 0x00;
+    while (1) {
+        __asm(" clrwdt");
+        LATB7 = !PORTBbits.RB7;
+        _delay((unsigned long)((100)*(32000000/4000.0)));
+    }
 }

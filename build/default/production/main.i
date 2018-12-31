@@ -5086,9 +5086,39 @@ typedef uint32_t uint_fast32_t;
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\stdbool.h" 1 3
 # 53 "./mcc_generated_files/mcc.h" 2
-# 68 "./mcc_generated_files/mcc.h"
+
+# 1 "./mcc_generated_files/interrupt_manager.h" 1
+# 110 "./mcc_generated_files/interrupt_manager.h"
+void INTERRUPT_Initialize (void);
+# 54 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/tmr0.h" 1
+# 106 "./mcc_generated_files/tmr0.h"
+void TMR0_Initialize(void);
+# 135 "./mcc_generated_files/tmr0.h"
+void TMR0_StartTimer(void);
+# 167 "./mcc_generated_files/tmr0.h"
+void TMR0_StopTimer(void);
+# 203 "./mcc_generated_files/tmr0.h"
+uint16_t TMR0_ReadTimer(void);
+# 242 "./mcc_generated_files/tmr0.h"
+void TMR0_WriteTimer(uint16_t timerVal);
+# 278 "./mcc_generated_files/tmr0.h"
+void TMR0_Reload(void);
+# 296 "./mcc_generated_files/tmr0.h"
+void TMR0_ISR(void);
+# 314 "./mcc_generated_files/tmr0.h"
+void TMR0_CallBack(void);
+# 332 "./mcc_generated_files/tmr0.h"
+ void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
+# 350 "./mcc_generated_files/tmr0.h"
+extern void (*TMR0_InterruptHandler)(void);
+# 368 "./mcc_generated_files/tmr0.h"
+void TMR0_DefaultInterruptHandler(void);
+# 55 "./mcc_generated_files/mcc.h" 2
+# 70 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 81 "./mcc_generated_files/mcc.h"
+# 83 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
 # 1 "main.c" 2
 
@@ -5138,26 +5168,57 @@ void LCD_Printf(const char *argList, ...);
 # 2 "main.c" 2
 
 # 1 "./HD44780.h" 1
-# 21 "./HD44780.h"
-void HD44780_init();
+# 25 "./HD44780.h"
+void HD44780_init(void);
+void HD44780_writeCommand(uint8_t value);
+void HD44780_writeData(uint8_t value);
+void HD44780_clearDisplay();
+void HD44780_returnHome();
+void HD44780_writeString(char* value);
+void HD44780_shiftCursorLeft();
+void HD44780_shiftCursorRight();
+void HD44780_shiftDisplayLeft();
+void HD44780_shiftDisplayRight();
+void HD44780_setDisplayAddress(uint8_t value);
 # 3 "main.c" 2
 
 
 
 
+void WDT_LED_Timer_ISR(void) {
+    __asm(" clrwdt");
+    LATB7 = !PORTBbits.RB7;
+}
+
 void main(void)
 {
 
     SYSTEM_Initialize();
-    WDTCONbits.SWDTEN = 0;
-# 26 "main.c"
-    _delay((unsigned long)((150)*(32000000/4000.0)));
+    WDTCONbits.SWDTEN = 1;
+    TMR0_SetInterruptHandler(&WDT_LED_Timer_ISR);
+    TMR0_StartTimer();
+
+
+
+
+    (INTCONbits.GIE = 1);
+
+
+    (INTCONbits.PEIE = 1);
+
+
+
+
+
+
     HD44780_init();
+    HD44780_writeString("Hello World!");
 
-    LCD_DisplayChar('H');
 
+
+    HD44780_setDisplayAddress(0x40);
+    HD44780_writeData('C');
     while (1) {
-        LATB7 = !PORTBbits.RB7;
-        _delay((unsigned long)((100)*(32000000/4000.0)));
+
     }
 }

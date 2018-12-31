@@ -4994,104 +4994,218 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\stdbool.h" 1 3
 # 3 "./HD44780.h" 2
-# 21 "./HD44780.h"
-void HD44780_init();
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 1 3
+# 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 135 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uintptr_t;
+# 150 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long intptr_t;
+# 166 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef signed char int8_t;
+
+
+
+
+typedef short int16_t;
+
+
+
+
+typedef long int32_t;
+
+
+
+
+
+typedef long long int64_t;
+# 191 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long intmax_t;
+
+
+
+
+
+typedef unsigned char uint8_t;
+
+
+
+
+typedef unsigned short uint16_t;
+
+
+
+
+typedef unsigned long uint32_t;
+
+
+
+
+
+typedef unsigned long long uint64_t;
+# 227 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long long uintmax_t;
+# 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
+
+
+typedef int8_t int_fast8_t;
+
+typedef int64_t int_fast64_t;
+
+
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
+typedef int32_t int_least32_t;
+
+typedef int64_t int_least64_t;
+
+
+typedef uint8_t uint_fast8_t;
+
+typedef uint64_t uint_fast64_t;
+
+
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
+typedef uint32_t uint_least32_t;
+
+typedef uint64_t uint_least64_t;
+# 131 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\bits/stdint.h" 1 3
+typedef int32_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint32_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+# 131 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
+# 4 "./HD44780.h" 2
+# 25 "./HD44780.h"
+void HD44780_init(void);
+void HD44780_writeCommand(uint8_t value);
+void HD44780_writeData(uint8_t value);
+void HD44780_clearDisplay();
+void HD44780_returnHome();
+void HD44780_writeString(char* value);
+void HD44780_shiftCursorLeft();
+void HD44780_shiftCursorRight();
+void HD44780_shiftDisplayLeft();
+void HD44780_shiftDisplayRight();
+void HD44780_setDisplayAddress(uint8_t value);
 # 2 "HD44780.c" 2
+# 42 "HD44780.c"
+void write_mode_on(void);
+void read_mode_on(void);
+void select_instruction_register(void);
+void select_data_register(void);
+void enable_pulse(void);
+void writeNibble(uint8_t value);
+void writeByte(uint8_t value);
 
 
+void HD44780_init(void) {
 
-
-void write_mode_on();
-void read_mode_on();
-void select_instruction_register();
-void select_data_register();
-void enable_pulse();
-
-void HD44780_init() {
-    _delay((unsigned long)((16*2)*(32000000/4000.0)));
+    _delay((unsigned long)((100*2)*(32000000/4000.0)));;
     LATC6 = 0;;
     LATC3 = 0;;
     LATC4 = 1;;
     LATC5 = 1;;
     select_instruction_register();
     write_mode_on();
-    _delay((unsigned long)((1*2)*(32000000/4000000.0)));
+    _delay((unsigned long)((1*2)*(32000000/4000000.0)));;
     enable_pulse();
-    _delay((unsigned long)((5*2)*(32000000/4000.0)));
+    _delay((unsigned long)((5*2)*(32000000/4000.0)));;
     enable_pulse();
-    _delay((unsigned long)((110*2)*(32000000/4000000.0)));
+    _delay((unsigned long)((110*2)*(32000000/4000000.0)));;
     enable_pulse();
-
-    _delay((unsigned long)((40*2)*(32000000/4000000.0)));
-
-    LATC6 = 0;;
-    LATC3 = 0;;
-    LATC4 = 1;;
-    LATC5 = 0;;
-    enable_pulse();
-    _delay((unsigned long)((40*2)*(32000000/4000000.0)));
+    _delay((unsigned long)((40*2)*(32000000/4000000.0)));;
 
 
-    LATC6 = 0;;
-    LATC3 = 0;;
-    LATC4 = 1;;
-    LATC5 = 0;;
-    enable_pulse();
-    _delay((unsigned long)((40*2)*(32000000/4000000.0)));
-    LATC6 = 1;;
-    LATC3 = 0;;
-    LATC4 = 0;;
-    LATC5 = 0;;
-    enable_pulse();
-    _delay((unsigned long)((40*2)*(32000000/4000000.0)));
+    writeNibble(0x02);
 
+    writeNibble(0x02);
+    writeNibble(0xFF);
 
-    LATC6 = 0;;
-    LATC3 = 0;;
-    LATC4 = 0;;
-    LATC5 = 0;;
-    enable_pulse();
-    _delay((unsigned long)((40*2)*(32000000/4000000.0)));
-    LATC6 = 1;;
-    LATC3 = 0;;
-    LATC4 = 0;;
-    LATC5 = 0;;
-    enable_pulse();
-    _delay((unsigned long)((40*2)*(32000000/4000000.0)));
-
-
-    LATC6 = 0;;
-    LATC3 = 0;;
-    LATC4 = 0;;
-    LATC5 = 0;;
-    enable_pulse();
-    _delay((unsigned long)((40*2)*(32000000/4000000.0)));
-    LATC6 = 1;;
-    LATC3 = 1;;
-    LATC4 = 1;;
-    LATC5 = 0;;
-    enable_pulse();
-    _delay((unsigned long)((40*2)*(32000000/4000000.0)));
+    HD44780_writeCommand(0x0F);
+    HD44780_writeCommand(0x06);
+    _delay((unsigned long)((500)*(32000000/4000000.0)));;
 }
 
-void write_mode_on() {
+void HD44780_writeString(char* value) {
+    while((*value)!=0)
+  HD44780_writeData(*value++);
+}
+
+void HD44780_setDisplayAddress(uint8_t value) {
+    HD44780_writeCommand(0b10000000 | value);
+}
+
+void HD44780_clearDisplay() {
+    HD44780_writeCommand(0x01);
+    _delay((unsigned long)((2*2)*(32000000/4000.0)));;
+}
+
+void HD44780_returnHome() {
+    HD44780_writeCommand(0x02);
+    _delay((unsigned long)((2*2)*(32000000/4000.0)));;
+}
+
+void HD44780_shiftCursorLeft() {
+    HD44780_writeCommand(0x10);
+}
+void HD44780_shiftCursorRight() {
+    HD44780_writeCommand(0x14);
+}
+void HD44780_shiftDisplayLeft() {
+    HD44780_writeCommand(0x18);
+}
+void HD44780_shiftDisplayRight() {
+    HD44780_writeCommand(0x1C);
+}
+
+void HD44780_writeCommand(uint8_t value) {
+    select_instruction_register();
+    write_mode_on();
+    writeByte(value);
+}
+
+void HD44780_writeData(uint8_t value) {
+    select_data_register();
+    write_mode_on();
+    writeByte(value);
+}
+
+void writeNibble(uint8_t value) {
+ LATC6 = (value >> 3) & 0b1;;
+    LATC3 = (value >> 2) & 0b1;;
+    LATC4 = (value >> 1) & 0b1;;
+    LATC5 = value & 0b1;;
+    enable_pulse();
+    _delay((unsigned long)((40*2)*(32000000/4000000.0)));;
+}
+
+void writeByte(uint8_t value) {
+ writeNibble(value >> 4);
+    writeNibble(value);
+}
+
+void write_mode_on(void) {
     LATB5 = 0;;
 }
 
-void read_mode_on() {
+void read_mode_on(void) {
     LATB5 = 1;;
 }
 
-void select_instruction_register() {
+void select_instruction_register(void) {
     LATB4 = 0;;
 }
 
-void select_data_register() {
+void select_data_register(void) {
     LATB4 = 1;;
 }
 
-void enable_pulse() {
+void enable_pulse(void) {
     LATB6 = 1;;
-    _delay((unsigned long)((1*2)*(32000000/4000000.0)));
+    _delay((unsigned long)((1*2)*(32000000/4000000.0)));;
     LATB6 = 0;;
 }

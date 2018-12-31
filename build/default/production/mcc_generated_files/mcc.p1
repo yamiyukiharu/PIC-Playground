@@ -1,10 +1,16 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"110 mcc_generated_files/interrupt_manager.h
+[; ;mcc_generated_files/interrupt_manager.h: 110: void INTERRUPT_Initialize (void);
+[v _INTERRUPT_Initialize `(v ~T0 @X0 0 ef ]
 "198 mcc_generated_files/pin_manager.h
 [; ;mcc_generated_files/pin_manager.h: 198: void PIN_MANAGER_Initialize (void);
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
-"81 mcc_generated_files/mcc.h
-[; ;mcc_generated_files/mcc.h: 81: void OSCILLATOR_Initialize(void);
+"83 mcc_generated_files/mcc.h
+[; ;mcc_generated_files/mcc.h: 83: void OSCILLATOR_Initialize(void);
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
+"106 mcc_generated_files/tmr0.h
+[; ;mcc_generated_files/tmr0.h: 106: void TMR0_Initialize(void);
+[v _TMR0_Initialize `(v ~T0 @X0 0 ef ]
 "6520 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f14k50.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f14k50.h: 6520: extern volatile unsigned char OSCCON __attribute__((address(0xFD3)));
 [v _OSCCON `Vuc ~T0 @X0 0 e@4051 ]
@@ -503,33 +509,39 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _SYSTEM_Initialize ]
 [f ]
 "53
-[; ;mcc_generated_files/mcc.c: 53:     PIN_MANAGER_Initialize();
-[e ( _PIN_MANAGER_Initialize ..  ]
+[; ;mcc_generated_files/mcc.c: 53:     INTERRUPT_Initialize();
+[e ( _INTERRUPT_Initialize ..  ]
 "54
-[; ;mcc_generated_files/mcc.c: 54:     OSCILLATOR_Initialize();
-[e ( _OSCILLATOR_Initialize ..  ]
+[; ;mcc_generated_files/mcc.c: 54:     PIN_MANAGER_Initialize();
+[e ( _PIN_MANAGER_Initialize ..  ]
 "55
-[; ;mcc_generated_files/mcc.c: 55: }
+[; ;mcc_generated_files/mcc.c: 55:     OSCILLATOR_Initialize();
+[e ( _OSCILLATOR_Initialize ..  ]
+"56
+[; ;mcc_generated_files/mcc.c: 56:     TMR0_Initialize();
+[e ( _TMR0_Initialize ..  ]
+"57
+[; ;mcc_generated_files/mcc.c: 57: }
 [e :UE 326 ]
 }
-"57
-[; ;mcc_generated_files/mcc.c: 57: void OSCILLATOR_Initialize(void)
+"59
+[; ;mcc_generated_files/mcc.c: 59: void OSCILLATOR_Initialize(void)
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
-"58
-[; ;mcc_generated_files/mcc.c: 58: {
+"60
+[; ;mcc_generated_files/mcc.c: 60: {
 {
 [e :U _OSCILLATOR_Initialize ]
 [f ]
-"60
-[; ;mcc_generated_files/mcc.c: 60:     OSCCON = 0x60;
-[e = _OSCCON -> -> 96 `i `uc ]
 "62
-[; ;mcc_generated_files/mcc.c: 62:     OSCCON2 = 0x04;
-[e = _OSCCON2 -> -> 4 `i `uc ]
+[; ;mcc_generated_files/mcc.c: 62:     OSCCON = 0x60;
+[e = _OSCCON -> -> 96 `i `uc ]
 "64
-[; ;mcc_generated_files/mcc.c: 64:     OSCTUNE = 0x00;
+[; ;mcc_generated_files/mcc.c: 64:     OSCCON2 = 0x04;
+[e = _OSCCON2 -> -> 4 `i `uc ]
+"66
+[; ;mcc_generated_files/mcc.c: 66:     OSCTUNE = 0x00;
 [e = _OSCTUNE -> -> 0 `i `uc ]
-"65
-[; ;mcc_generated_files/mcc.c: 65: }
+"67
+[; ;mcc_generated_files/mcc.c: 67: }
 [e :UE 327 ]
 }

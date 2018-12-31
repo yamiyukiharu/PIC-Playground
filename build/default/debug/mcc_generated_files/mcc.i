@@ -5087,39 +5087,9 @@ typedef uint32_t uint_fast32_t;
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\stdbool.h" 1 3
 # 53 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/interrupt_manager.h" 1
-# 110 "mcc_generated_files/interrupt_manager.h"
-void INTERRUPT_Initialize (void);
-# 54 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/tmr0.h" 1
-# 106 "mcc_generated_files/tmr0.h"
-void TMR0_Initialize(void);
-# 135 "mcc_generated_files/tmr0.h"
-void TMR0_StartTimer(void);
-# 167 "mcc_generated_files/tmr0.h"
-void TMR0_StopTimer(void);
-# 203 "mcc_generated_files/tmr0.h"
-uint16_t TMR0_ReadTimer(void);
-# 242 "mcc_generated_files/tmr0.h"
-void TMR0_WriteTimer(uint16_t timerVal);
-# 278 "mcc_generated_files/tmr0.h"
-void TMR0_Reload(void);
-# 296 "mcc_generated_files/tmr0.h"
-void TMR0_ISR(void);
-# 314 "mcc_generated_files/tmr0.h"
-void TMR0_CallBack(void);
-# 332 "mcc_generated_files/tmr0.h"
- void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 350 "mcc_generated_files/tmr0.h"
-extern void (*TMR0_InterruptHandler)(void);
-# 368 "mcc_generated_files/tmr0.h"
-void TMR0_DefaultInterruptHandler(void);
-# 55 "mcc_generated_files/mcc.h" 2
-# 70 "mcc_generated_files/mcc.h"
+# 68 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 83 "mcc_generated_files/mcc.h"
+# 81 "mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
 # 47 "mcc_generated_files/mcc.c" 2
 
@@ -5128,10 +5098,8 @@ void OSCILLATOR_Initialize(void);
 void SYSTEM_Initialize(void)
 {
 
-    INTERRUPT_Initialize();
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
-    TMR0_Initialize();
 }
 
 void OSCILLATOR_Initialize(void)

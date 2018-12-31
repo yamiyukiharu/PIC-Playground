@@ -15,15 +15,30 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8441
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f14k50.h: 8441: extern volatile __bit LATC5 __attribute__((address(0x7C5D)));
 [v _LATC5 `Vb ~T0 @X0 0 e@31837 ]
-"8 HD44780.c
-[; ;HD44780.c: 8: void select_instruction_register();
-[v _select_instruction_register `(v ~T0 @X0 0 e? ]
-"6
-[; ;HD44780.c: 6: void write_mode_on();
-[v _write_mode_on `(v ~T0 @X0 0 e? ]
-"10
-[; ;HD44780.c: 10: void enable_pulse();
-[v _enable_pulse `(v ~T0 @X0 0 e? ]
+"44 HD44780.c
+[; ;HD44780.c: 44: void select_instruction_register(void);
+[v _select_instruction_register `(v ~T0 @X0 0 ef ]
+"42
+[; ;HD44780.c: 42: void write_mode_on(void);
+[v _write_mode_on `(v ~T0 @X0 0 ef ]
+"46
+[; ;HD44780.c: 46: void enable_pulse(void);
+[v _enable_pulse `(v ~T0 @X0 0 ef ]
+"47
+[; ;HD44780.c: 47: void writeNibble(uint8_t value);
+[v _writeNibble `(v ~T0 @X0 0 ef1`uc ]
+"26 ./HD44780.h
+[; ;./HD44780.h: 26: void HD44780_writeCommand(uint8_t value);
+[v _HD44780_writeCommand `(v ~T0 @X0 0 ef1`uc ]
+"27
+[; ;./HD44780.h: 27: void HD44780_writeData(uint8_t value);
+[v _HD44780_writeData `(v ~T0 @X0 0 ef1`uc ]
+"48 HD44780.c
+[; ;HD44780.c: 48: void writeByte(uint8_t value);
+[v _writeByte `(v ~T0 @X0 0 ef1`uc ]
+"45
+[; ;HD44780.c: 45: void select_data_register(void);
+[v _select_data_register `(v ~T0 @X0 0 ef ]
 "8417 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f14k50.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f14k50.h: 8417: extern volatile __bit LATB5 __attribute__((address(0x7C55)));
 [v _LATB5 `Vb ~T0 @X0 0 e@31829 ]
@@ -513,252 +528,351 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7419
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f14k50.h: 7419: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"12 HD44780.c
-[; ;HD44780.c: 12: void HD44780_init() {
+"51 HD44780.c
+[; ;HD44780.c: 51: void HD44780_init(void) {
 [v _HD44780_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _HD44780_init ]
 [f ]
-"13
-[; ;HD44780.c: 13:     _delay((unsigned long)((16*2)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> * -> 16 `i -> 2 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"14
-[; ;HD44780.c: 14:     LATC6 = 0;;
-[e = _LATC6 -> -> 0 `i `b ]
-"15
-[; ;HD44780.c: 15:     LATC3 = 0;;
-[e = _LATC3 -> -> 0 `i `b ]
-"16
-[; ;HD44780.c: 16:     LATC4 = 1;;
-[e = _LATC4 -> -> 1 `i `b ]
-"17
-[; ;HD44780.c: 17:     LATC5 = 1;;
-[e = _LATC5 -> -> 1 `i `b ]
-"18
-[; ;HD44780.c: 18:     select_instruction_register();
-[e ( _select_instruction_register ..  ]
-"19
-[; ;HD44780.c: 19:     write_mode_on();
-[e ( _write_mode_on ..  ]
-"20
-[; ;HD44780.c: 20:     _delay((unsigned long)((1*2)*(32000000/4000000.0)));
-[e ( __delay (1 -> * -> * -> 1 `i -> 2 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
-"21
-[; ;HD44780.c: 21:     enable_pulse();
-[e ( _enable_pulse ..  ]
-"22
-[; ;HD44780.c: 22:     _delay((unsigned long)((5*2)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> * -> 5 `i -> 2 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"23
-[; ;HD44780.c: 23:     enable_pulse();
-[e ( _enable_pulse ..  ]
-"24
-[; ;HD44780.c: 24:     _delay((unsigned long)((110*2)*(32000000/4000000.0)));
-[e ( __delay (1 -> * -> * -> 110 `i -> 2 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
-"25
-[; ;HD44780.c: 25:     enable_pulse();
-[e ( _enable_pulse ..  ]
-"27
-[; ;HD44780.c: 27:     _delay((unsigned long)((40*2)*(32000000/4000000.0)));
-[e ( __delay (1 -> * -> * -> 40 `i -> 2 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
-"29
-[; ;HD44780.c: 29:     LATC6 = 0;;
-[e = _LATC6 -> -> 0 `i `b ]
-"30
-[; ;HD44780.c: 30:     LATC3 = 0;;
-[e = _LATC3 -> -> 0 `i `b ]
-"31
-[; ;HD44780.c: 31:     LATC4 = 1;;
-[e = _LATC4 -> -> 1 `i `b ]
-"32
-[; ;HD44780.c: 32:     LATC5 = 0;;
-[e = _LATC5 -> -> 0 `i `b ]
-"33
-[; ;HD44780.c: 33:     enable_pulse();
-[e ( _enable_pulse ..  ]
-"34
-[; ;HD44780.c: 34:     _delay((unsigned long)((40*2)*(32000000/4000000.0)));
-[e ( __delay (1 -> * -> * -> 40 `i -> 2 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
-"37
-[; ;HD44780.c: 37:     LATC6 = 0;;
-[e = _LATC6 -> -> 0 `i `b ]
-"38
-[; ;HD44780.c: 38:     LATC3 = 0;;
-[e = _LATC3 -> -> 0 `i `b ]
-"39
-[; ;HD44780.c: 39:     LATC4 = 1;;
-[e = _LATC4 -> -> 1 `i `b ]
-"40
-[; ;HD44780.c: 40:     LATC5 = 0;;
-[e = _LATC5 -> -> 0 `i `b ]
-"41
-[; ;HD44780.c: 41:     enable_pulse();
-[e ( _enable_pulse ..  ]
-"42
-[; ;HD44780.c: 42:     _delay((unsigned long)((40*2)*(32000000/4000000.0)));
-[e ( __delay (1 -> * -> * -> 40 `i -> 2 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
-"43
-[; ;HD44780.c: 43:     LATC6 = 1;;
-[e = _LATC6 -> -> 1 `i `b ]
-"44
-[; ;HD44780.c: 44:     LATC3 = 0;;
-[e = _LATC3 -> -> 0 `i `b ]
-"45
-[; ;HD44780.c: 45:     LATC4 = 0;;
-[e = _LATC4 -> -> 0 `i `b ]
-"46
-[; ;HD44780.c: 46:     LATC5 = 0;;
-[e = _LATC5 -> -> 0 `i `b ]
-"47
-[; ;HD44780.c: 47:     enable_pulse();
-[e ( _enable_pulse ..  ]
-"48
-[; ;HD44780.c: 48:     _delay((unsigned long)((40*2)*(32000000/4000000.0)));
-[e ( __delay (1 -> * -> * -> 40 `i -> 2 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
-"51
-[; ;HD44780.c: 51:     LATC6 = 0;;
-[e = _LATC6 -> -> 0 `i `b ]
-"52
-[; ;HD44780.c: 52:     LATC3 = 0;;
-[e = _LATC3 -> -> 0 `i `b ]
 "53
-[; ;HD44780.c: 53:     LATC4 = 0;;
-[e = _LATC4 -> -> 0 `i `b ]
+[; ;HD44780.c: 53:     _delay((unsigned long)((100*2)*(32000000/4000.0)));;
+[e ( __delay (1 -> * -> * -> 100 `i -> 2 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
 "54
-[; ;HD44780.c: 54:     LATC5 = 0;;
-[e = _LATC5 -> -> 0 `i `b ]
+[; ;HD44780.c: 54:     LATC6 = 0;;
+[e = _LATC6 -> -> 0 `i `b ]
 "55
-[; ;HD44780.c: 55:     enable_pulse();
-[e ( _enable_pulse ..  ]
-"56
-[; ;HD44780.c: 56:     _delay((unsigned long)((40*2)*(32000000/4000000.0)));
-[e ( __delay (1 -> * -> * -> 40 `i -> 2 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
-"57
-[; ;HD44780.c: 57:     LATC6 = 1;;
-[e = _LATC6 -> -> 1 `i `b ]
-"58
-[; ;HD44780.c: 58:     LATC3 = 0;;
+[; ;HD44780.c: 55:     LATC3 = 0;;
 [e = _LATC3 -> -> 0 `i `b ]
+"56
+[; ;HD44780.c: 56:     LATC4 = 1;;
+[e = _LATC4 -> -> 1 `i `b ]
+"57
+[; ;HD44780.c: 57:     LATC5 = 1;;
+[e = _LATC5 -> -> 1 `i `b ]
+"58
+[; ;HD44780.c: 58:     select_instruction_register();
+[e ( _select_instruction_register ..  ]
 "59
-[; ;HD44780.c: 59:     LATC4 = 0;;
-[e = _LATC4 -> -> 0 `i `b ]
+[; ;HD44780.c: 59:     write_mode_on();
+[e ( _write_mode_on ..  ]
 "60
-[; ;HD44780.c: 60:     LATC5 = 0;;
-[e = _LATC5 -> -> 0 `i `b ]
+[; ;HD44780.c: 60:     _delay((unsigned long)((1*2)*(32000000/4000000.0)));;
+[e ( __delay (1 -> * -> * -> 1 `i -> 2 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
 "61
 [; ;HD44780.c: 61:     enable_pulse();
 [e ( _enable_pulse ..  ]
 "62
-[; ;HD44780.c: 62:     _delay((unsigned long)((40*2)*(32000000/4000000.0)));
-[e ( __delay (1 -> * -> * -> 40 `i -> 2 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
+[; ;HD44780.c: 62:     _delay((unsigned long)((5*2)*(32000000/4000.0)));;
+[e ( __delay (1 -> * -> * -> 5 `i -> 2 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+"63
+[; ;HD44780.c: 63:     enable_pulse();
+[e ( _enable_pulse ..  ]
+"64
+[; ;HD44780.c: 64:     _delay((unsigned long)((110*2)*(32000000/4000000.0)));;
+[e ( __delay (1 -> * -> * -> 110 `i -> 2 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
 "65
-[; ;HD44780.c: 65:     LATC6 = 0;;
-[e = _LATC6 -> -> 0 `i `b ]
+[; ;HD44780.c: 65:     enable_pulse();
+[e ( _enable_pulse ..  ]
 "66
-[; ;HD44780.c: 66:     LATC3 = 0;;
-[e = _LATC3 -> -> 0 `i `b ]
-"67
-[; ;HD44780.c: 67:     LATC4 = 0;;
-[e = _LATC4 -> -> 0 `i `b ]
-"68
-[; ;HD44780.c: 68:     LATC5 = 0;;
-[e = _LATC5 -> -> 0 `i `b ]
+[; ;HD44780.c: 66:     _delay((unsigned long)((40*2)*(32000000/4000000.0)));;
+[e ( __delay (1 -> * -> * -> 40 `i -> 2 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
 "69
-[; ;HD44780.c: 69:     enable_pulse();
-[e ( _enable_pulse ..  ]
-"70
-[; ;HD44780.c: 70:     _delay((unsigned long)((40*2)*(32000000/4000000.0)));
-[e ( __delay (1 -> * -> * -> 40 `i -> 2 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
+[; ;HD44780.c: 69:     writeNibble(0x02);
+[e ( _writeNibble (1 -> -> 2 `i `uc ]
 "71
-[; ;HD44780.c: 71:     LATC6 = 1;;
-[e = _LATC6 -> -> 1 `i `b ]
+[; ;HD44780.c: 71:     writeNibble(0x02);
+[e ( _writeNibble (1 -> -> 2 `i `uc ]
 "72
-[; ;HD44780.c: 72:     LATC3 = 1;;
-[e = _LATC3 -> -> 1 `i `b ]
-"73
-[; ;HD44780.c: 73:     LATC4 = 1;;
-[e = _LATC4 -> -> 1 `i `b ]
+[; ;HD44780.c: 72:     writeNibble(0xFF);
+[e ( _writeNibble (1 -> -> 255 `i `uc ]
 "74
-[; ;HD44780.c: 74:     LATC5 = 0;;
-[e = _LATC5 -> -> 0 `i `b ]
+[; ;HD44780.c: 74:     HD44780_writeCommand(0x0F);
+[e ( _HD44780_writeCommand (1 -> -> 15 `i `uc ]
 "75
-[; ;HD44780.c: 75:     enable_pulse();
-[e ( _enable_pulse ..  ]
+[; ;HD44780.c: 75:     HD44780_writeCommand(0x06);
+[e ( _HD44780_writeCommand (1 -> -> 6 `i `uc ]
 "76
-[; ;HD44780.c: 76:     _delay((unsigned long)((40*2)*(32000000/4000000.0)));
-[e ( __delay (1 -> * -> * -> 40 `i -> 2 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
+[; ;HD44780.c: 76:     _delay((unsigned long)((500)*(32000000/4000000.0)));;
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
 "77
 [; ;HD44780.c: 77: }
 [e :UE 326 ]
 }
 "79
-[; ;HD44780.c: 79: void write_mode_on() {
+[; ;HD44780.c: 79: void HD44780_writeString(char* value) {
+[v _HD44780_writeString `(v ~T0 @X0 1 ef1`*uc ]
+{
+[e :U _HD44780_writeString ]
+[v _value `*uc ~T0 @X0 1 r1 ]
+[f ]
+"80
+[; ;HD44780.c: 80:     while((*value)!=0)
+[e $U 328  ]
+[e :U 329 ]
+"81
+[; ;HD44780.c: 81:   HD44780_writeData(*value++);
+[e ( _HD44780_writeData (1 -> *U ++ _value * -> -> 1 `i `x -> -> # *U _value `i `x `uc ]
+[e :U 328 ]
+"80
+[; ;HD44780.c: 80:     while((*value)!=0)
+[e $ != -> *U _value `i -> 0 `i 329  ]
+[e :U 330 ]
+"82
+[; ;HD44780.c: 82: }
+[e :UE 327 ]
+}
+"84
+[; ;HD44780.c: 84: void HD44780_setDisplayAddress(uint8_t value) {
+[v _HD44780_setDisplayAddress `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _HD44780_setDisplayAddress ]
+[v _value `uc ~T0 @X0 1 r1 ]
+[f ]
+"85
+[; ;HD44780.c: 85:     HD44780_writeCommand(0b10000000 | value);
+[e ( _HD44780_writeCommand (1 -> | -> 128 `i -> _value `i `uc ]
+"86
+[; ;HD44780.c: 86: }
+[e :UE 331 ]
+}
+"88
+[; ;HD44780.c: 88: void HD44780_clearDisplay() {
+[v _HD44780_clearDisplay `(v ~T0 @X0 1 ef ]
+{
+[e :U _HD44780_clearDisplay ]
+[f ]
+"89
+[; ;HD44780.c: 89:     HD44780_writeCommand(0x01);
+[e ( _HD44780_writeCommand (1 -> -> 1 `i `uc ]
+"90
+[; ;HD44780.c: 90:     _delay((unsigned long)((2*2)*(32000000/4000.0)));;
+[e ( __delay (1 -> * -> * -> 2 `i -> 2 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+"91
+[; ;HD44780.c: 91: }
+[e :UE 332 ]
+}
+"93
+[; ;HD44780.c: 93: void HD44780_returnHome() {
+[v _HD44780_returnHome `(v ~T0 @X0 1 ef ]
+{
+[e :U _HD44780_returnHome ]
+[f ]
+"94
+[; ;HD44780.c: 94:     HD44780_writeCommand(0x02);
+[e ( _HD44780_writeCommand (1 -> -> 2 `i `uc ]
+"95
+[; ;HD44780.c: 95:     _delay((unsigned long)((2*2)*(32000000/4000.0)));;
+[e ( __delay (1 -> * -> * -> 2 `i -> 2 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+"96
+[; ;HD44780.c: 96: }
+[e :UE 333 ]
+}
+"98
+[; ;HD44780.c: 98: void HD44780_shiftCursorLeft() {
+[v _HD44780_shiftCursorLeft `(v ~T0 @X0 1 ef ]
+{
+[e :U _HD44780_shiftCursorLeft ]
+[f ]
+"99
+[; ;HD44780.c: 99:     HD44780_writeCommand(0x10);
+[e ( _HD44780_writeCommand (1 -> -> 16 `i `uc ]
+"100
+[; ;HD44780.c: 100: }
+[e :UE 334 ]
+}
+"101
+[; ;HD44780.c: 101: void HD44780_shiftCursorRight() {
+[v _HD44780_shiftCursorRight `(v ~T0 @X0 1 ef ]
+{
+[e :U _HD44780_shiftCursorRight ]
+[f ]
+"102
+[; ;HD44780.c: 102:     HD44780_writeCommand(0x14);
+[e ( _HD44780_writeCommand (1 -> -> 20 `i `uc ]
+"103
+[; ;HD44780.c: 103: }
+[e :UE 335 ]
+}
+"104
+[; ;HD44780.c: 104: void HD44780_shiftDisplayLeft() {
+[v _HD44780_shiftDisplayLeft `(v ~T0 @X0 1 ef ]
+{
+[e :U _HD44780_shiftDisplayLeft ]
+[f ]
+"105
+[; ;HD44780.c: 105:     HD44780_writeCommand(0x18);
+[e ( _HD44780_writeCommand (1 -> -> 24 `i `uc ]
+"106
+[; ;HD44780.c: 106: }
+[e :UE 336 ]
+}
+"107
+[; ;HD44780.c: 107: void HD44780_shiftDisplayRight() {
+[v _HD44780_shiftDisplayRight `(v ~T0 @X0 1 ef ]
+{
+[e :U _HD44780_shiftDisplayRight ]
+[f ]
+"108
+[; ;HD44780.c: 108:     HD44780_writeCommand(0x1C);
+[e ( _HD44780_writeCommand (1 -> -> 28 `i `uc ]
+"109
+[; ;HD44780.c: 109: }
+[e :UE 337 ]
+}
+"111
+[; ;HD44780.c: 111: void HD44780_writeCommand(uint8_t value) {
+[v _HD44780_writeCommand `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _HD44780_writeCommand ]
+[v _value `uc ~T0 @X0 1 r1 ]
+[f ]
+"112
+[; ;HD44780.c: 112:     select_instruction_register();
+[e ( _select_instruction_register ..  ]
+"113
+[; ;HD44780.c: 113:     write_mode_on();
+[e ( _write_mode_on ..  ]
+"114
+[; ;HD44780.c: 114:     writeByte(value);
+[e ( _writeByte (1 _value ]
+"115
+[; ;HD44780.c: 115: }
+[e :UE 338 ]
+}
+"117
+[; ;HD44780.c: 117: void HD44780_writeData(uint8_t value) {
+[v _HD44780_writeData `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _HD44780_writeData ]
+[v _value `uc ~T0 @X0 1 r1 ]
+[f ]
+"118
+[; ;HD44780.c: 118:     select_data_register();
+[e ( _select_data_register ..  ]
+"119
+[; ;HD44780.c: 119:     write_mode_on();
+[e ( _write_mode_on ..  ]
+"120
+[; ;HD44780.c: 120:     writeByte(value);
+[e ( _writeByte (1 _value ]
+"121
+[; ;HD44780.c: 121: }
+[e :UE 339 ]
+}
+"123
+[; ;HD44780.c: 123: void writeNibble(uint8_t value) {
+[v _writeNibble `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _writeNibble ]
+[v _value `uc ~T0 @X0 1 r1 ]
+[f ]
+"124
+[; ;HD44780.c: 124:  LATC6 = (value >> 3) & 0b1;;
+[e = _LATC6 -> & >> -> _value `i -> 3 `i -> 1 `i `b ]
+"125
+[; ;HD44780.c: 125:     LATC3 = (value >> 2) & 0b1;;
+[e = _LATC3 -> & >> -> _value `i -> 2 `i -> 1 `i `b ]
+"126
+[; ;HD44780.c: 126:     LATC4 = (value >> 1) & 0b1;;
+[e = _LATC4 -> & >> -> _value `i -> 1 `i -> 1 `i `b ]
+"127
+[; ;HD44780.c: 127:     LATC5 = value & 0b1;;
+[e = _LATC5 -> & -> _value `i -> 1 `i `b ]
+"128
+[; ;HD44780.c: 128:     enable_pulse();
+[e ( _enable_pulse ..  ]
+"129
+[; ;HD44780.c: 129:     _delay((unsigned long)((40*2)*(32000000/4000000.0)));;
+[e ( __delay (1 -> * -> * -> 40 `i -> 2 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
+"130
+[; ;HD44780.c: 130: }
+[e :UE 340 ]
+}
+"132
+[; ;HD44780.c: 132: void writeByte(uint8_t value) {
+[v _writeByte `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _writeByte ]
+[v _value `uc ~T0 @X0 1 r1 ]
+[f ]
+"133
+[; ;HD44780.c: 133:  writeNibble(value >> 4);
+[e ( _writeNibble (1 -> >> -> _value `i -> 4 `i `uc ]
+"134
+[; ;HD44780.c: 134:     writeNibble(value);
+[e ( _writeNibble (1 _value ]
+"135
+[; ;HD44780.c: 135: }
+[e :UE 341 ]
+}
+"137
+[; ;HD44780.c: 137: void write_mode_on(void) {
 [v _write_mode_on `(v ~T0 @X0 1 ef ]
 {
 [e :U _write_mode_on ]
 [f ]
-"80
-[; ;HD44780.c: 80:     LATB5 = 0;;
+"138
+[; ;HD44780.c: 138:     LATB5 = 0;;
 [e = _LATB5 -> -> 0 `i `b ]
-"81
-[; ;HD44780.c: 81: }
-[e :UE 327 ]
+"139
+[; ;HD44780.c: 139: }
+[e :UE 342 ]
 }
-"83
-[; ;HD44780.c: 83: void read_mode_on() {
+"141
+[; ;HD44780.c: 141: void read_mode_on(void) {
 [v _read_mode_on `(v ~T0 @X0 1 ef ]
 {
 [e :U _read_mode_on ]
 [f ]
-"84
-[; ;HD44780.c: 84:     LATB5 = 1;;
+"142
+[; ;HD44780.c: 142:     LATB5 = 1;;
 [e = _LATB5 -> -> 1 `i `b ]
-"85
-[; ;HD44780.c: 85: }
-[e :UE 328 ]
+"143
+[; ;HD44780.c: 143: }
+[e :UE 343 ]
 }
-"87
-[; ;HD44780.c: 87: void select_instruction_register() {
+"145
+[; ;HD44780.c: 145: void select_instruction_register(void) {
 [v _select_instruction_register `(v ~T0 @X0 1 ef ]
 {
 [e :U _select_instruction_register ]
 [f ]
-"88
-[; ;HD44780.c: 88:     LATB4 = 0;;
+"146
+[; ;HD44780.c: 146:     LATB4 = 0;;
 [e = _LATB4 -> -> 0 `i `b ]
-"89
-[; ;HD44780.c: 89: }
-[e :UE 329 ]
+"147
+[; ;HD44780.c: 147: }
+[e :UE 344 ]
 }
-"91
-[; ;HD44780.c: 91: void select_data_register() {
+"149
+[; ;HD44780.c: 149: void select_data_register(void) {
 [v _select_data_register `(v ~T0 @X0 1 ef ]
 {
 [e :U _select_data_register ]
 [f ]
-"92
-[; ;HD44780.c: 92:     LATB4 = 1;;
+"150
+[; ;HD44780.c: 150:     LATB4 = 1;;
 [e = _LATB4 -> -> 1 `i `b ]
-"93
-[; ;HD44780.c: 93: }
-[e :UE 330 ]
+"151
+[; ;HD44780.c: 151: }
+[e :UE 345 ]
 }
-"95
-[; ;HD44780.c: 95: void enable_pulse() {
+"153
+[; ;HD44780.c: 153: void enable_pulse(void) {
 [v _enable_pulse `(v ~T0 @X0 1 ef ]
 {
 [e :U _enable_pulse ]
 [f ]
-"96
-[; ;HD44780.c: 96:     LATB6 = 1;;
+"154
+[; ;HD44780.c: 154:     LATB6 = 1;;
 [e = _LATB6 -> -> 1 `i `b ]
-"97
-[; ;HD44780.c: 97:     _delay((unsigned long)((1*2)*(32000000/4000000.0)));
+"155
+[; ;HD44780.c: 155:     _delay((unsigned long)((1*2)*(32000000/4000000.0)));;
 [e ( __delay (1 -> * -> * -> 1 `i -> 2 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
-"98
-[; ;HD44780.c: 98:     LATB6 = 0;;
+"156
+[; ;HD44780.c: 156:     LATB6 = 0;;
 [e = _LATB6 -> -> 0 `i `b ]
-"99
-[; ;HD44780.c: 99: }
-[e :UE 331 ]
+"157
+[; ;HD44780.c: 157: }
+[e :UE 346 ]
 }

@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/mcc.c"
+# 1 "mcc_generated_files/interrupt_manager.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,13 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/mcc.c" 2
-# 47 "mcc_generated_files/mcc.c"
+# 1 "mcc_generated_files/interrupt_manager.c" 2
+# 49 "mcc_generated_files/interrupt_manager.c"
+# 1 "mcc_generated_files/interrupt_manager.h" 1
+# 110 "mcc_generated_files/interrupt_manager.h"
+void INTERRUPT_Initialize (void);
+# 49 "mcc_generated_files/interrupt_manager.c" 2
+
 # 1 "mcc_generated_files/mcc.h" 1
 # 49 "mcc_generated_files/mcc.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 1 3
@@ -5088,10 +5093,6 @@ typedef uint32_t uint_fast32_t;
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\stdbool.h" 1 3
 # 53 "mcc_generated_files/mcc.h" 2
 
-# 1 "mcc_generated_files/interrupt_manager.h" 1
-# 110 "mcc_generated_files/interrupt_manager.h"
-void INTERRUPT_Initialize (void);
-# 54 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/tmr0.h" 1
 # 106 "mcc_generated_files/tmr0.h"
@@ -5121,25 +5122,24 @@ void TMR0_DefaultInterruptHandler(void);
 void SYSTEM_Initialize(void);
 # 83 "mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 47 "mcc_generated_files/mcc.c" 2
+# 50 "mcc_generated_files/interrupt_manager.c" 2
 
 
-
-void SYSTEM_Initialize(void)
+void INTERRUPT_Initialize (void)
 {
 
-    INTERRUPT_Initialize();
-    PIN_MANAGER_Initialize();
-    OSCILLATOR_Initialize();
-    TMR0_Initialize();
+    RCONbits.IPEN = 0;
 }
 
-void OSCILLATOR_Initialize(void)
+void __attribute__((picinterrupt(""))) INTERRUPT_InterruptManager (void)
 {
 
-    OSCCON = 0x60;
+    if(INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1)
+    {
+        TMR0_ISR();
+    }
+    else
+    {
 
-    OSCCON2 = 0x04;
-
-    OSCTUNE = 0x00;
+    }
 }

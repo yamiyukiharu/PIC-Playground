@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/mcc.c"
+# 1 "mcc_generated_files/tmr0.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/mcc.c" 2
-# 47 "mcc_generated_files/mcc.c"
-# 1 "mcc_generated_files/mcc.h" 1
-# 49 "mcc_generated_files/mcc.h"
+# 1 "mcc_generated_files/tmr0.c" 2
+# 51 "mcc_generated_files/tmr0.c"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4988,18 +4986,10 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 49 "mcc_generated_files/mcc.h" 2
+# 51 "mcc_generated_files/tmr0.c" 2
 
-# 1 "mcc_generated_files/device_config.h" 1
-# 50 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/pin_manager.h" 1
-# 198 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-# 210 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_IOC(void);
-# 51 "mcc_generated_files/mcc.h" 2
-
+# 1 "mcc_generated_files/tmr0.h" 1
+# 54 "mcc_generated_files/tmr0.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 3
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -5083,17 +5073,10 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 131 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
-# 52 "mcc_generated_files/mcc.h" 2
+# 54 "mcc_generated_files/tmr0.h" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\stdbool.h" 1 3
-# 53 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/interrupt_manager.h" 1
-# 110 "mcc_generated_files/interrupt_manager.h"
-void INTERRUPT_Initialize (void);
-# 54 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/tmr0.h" 1
+# 55 "mcc_generated_files/tmr0.h" 2
 # 106 "mcc_generated_files/tmr0.h"
 void TMR0_Initialize(void);
 # 135 "mcc_generated_files/tmr0.h"
@@ -5116,30 +5099,124 @@ void TMR0_CallBack(void);
 extern void (*TMR0_InterruptHandler)(void);
 # 368 "mcc_generated_files/tmr0.h"
 void TMR0_DefaultInterruptHandler(void);
-# 55 "mcc_generated_files/mcc.h" 2
-# 70 "mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(void);
-# 83 "mcc_generated_files/mcc.h"
-void OSCILLATOR_Initialize(void);
-# 47 "mcc_generated_files/mcc.c" 2
+# 52 "mcc_generated_files/tmr0.c" 2
 
 
 
-void SYSTEM_Initialize(void)
+
+
+
+void (*TMR0_InterruptHandler)(void);
+
+volatile uint16_t timer0ReloadVal;
+
+
+
+
+
+
+void TMR0_Initialize(void)
 {
 
-    INTERRUPT_Initialize();
-    PIN_MANAGER_Initialize();
-    OSCILLATOR_Initialize();
-    TMR0_Initialize();
+
+
+    T0CONbits.T08BIT = 0;
+
+
+    TMR0H = 0x3C;
+
+
+    TMR0L = 0xAF;
+
+
+
+    timer0ReloadVal = (uint16_t)((TMR0H << 8) | TMR0L);
+
+
+    INTCONbits.TMR0IF = 0;
+
+
+    INTCONbits.TMR0IE = 1;
+
+
+    TMR0_SetInterruptHandler(TMR0_DefaultInterruptHandler);
+
+
+    T0CON = 0x93;
 }
 
-void OSCILLATOR_Initialize(void)
+void TMR0_StartTimer(void)
 {
 
-    OSCCON = 0x60;
+    T0CONbits.TMR0ON = 1;
+}
 
-    OSCCON2 = 0x04;
+void TMR0_StopTimer(void)
+{
 
-    OSCTUNE = 0x00;
+    T0CONbits.TMR0ON = 0;
+}
+
+uint16_t TMR0_ReadTimer(void)
+{
+    uint16_t readVal;
+    uint8_t readValLow;
+    uint8_t readValHigh;
+
+    readValLow = TMR0L;
+    readValHigh = TMR0H;
+    readVal = ((uint16_t)readValHigh << 8) + readValLow;
+
+    return readVal;
+}
+
+void TMR0_WriteTimer(uint16_t timerVal)
+{
+
+    TMR0H = timerVal >> 8;
+    TMR0L = (uint8_t) timerVal;
+}
+
+void TMR0_Reload(void)
+{
+
+    TMR0H = timer0ReloadVal >> 8;
+    TMR0L = (uint8_t) timer0ReloadVal;
+}
+
+void TMR0_ISR(void)
+{
+
+
+    INTCONbits.TMR0IF = 0;
+
+
+
+    TMR0H = timer0ReloadVal >> 8;
+    TMR0L = (uint8_t) timer0ReloadVal;
+
+
+
+    TMR0_CallBack();
+
+
+}
+
+void TMR0_CallBack(void)
+{
+
+
+    if(TMR0_InterruptHandler)
+    {
+        TMR0_InterruptHandler();
+    }
+}
+
+void TMR0_SetInterruptHandler(void (* InterruptHandler)(void)){
+    TMR0_InterruptHandler = InterruptHandler;
+}
+
+void TMR0_DefaultInterruptHandler(void){
+
+
 }

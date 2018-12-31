@@ -36,27 +36,15 @@ mENUM_LcdMaxLines 5
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"51 C:\Users\User\MPLABXProjects\Playground1.X\HD44780.c
+"16 C:\Users\User\MPLABXProjects\Playground1.X\HD44780.c
 [v _HD44780_init HD44780_init `(v  1 e 1 0 ]
-"79
-[v _HD44780_writeString HD44780_writeString `(v  1 e 1 0 ]
-"84
-[v _HD44780_setDisplayAddress HD44780_setDisplayAddress `(v  1 e 1 0 ]
-"111
-[v _HD44780_writeCommand HD44780_writeCommand `(v  1 e 1 0 ]
-"117
-[v _HD44780_writeData HD44780_writeData `(v  1 e 1 0 ]
-"123
+"78
 [v _writeNibble writeNibble `(v  1 e 1 0 ]
-"132
-[v _writeByte writeByte `(v  1 e 1 0 ]
-"137
+"92
 [v _write_mode_on write_mode_on `(v  1 e 1 0 ]
-"145
+"100
 [v _select_instruction_register select_instruction_register `(v  1 e 1 0 ]
-"149
-[v _select_data_register select_data_register `(v  1 e 1 0 ]
-"153
+"108
 [v _enable_pulse enable_pulse `(v  1 e 1 0 ]
 "144 C:\Users\User\MPLABXProjects\Playground1.X\lcd.c
 [v _LCD_Clear LCD_Clear `(v  1 e 1 0 ]
@@ -81,31 +69,13 @@ mENUM_LcdMaxLines 5
 "956
 [v _lcd_SendDataSignals lcd_SendDataSignals `(v  1 s 1 lcd_SendDataSignals ]
 "7 C:\Users\User\MPLABXProjects\Playground1.X\main.c
-[v _WDT_LED_Timer_ISR WDT_LED_Timer_ISR `(v  1 e 1 0 ]
-"12
 [v _main main `(v  1 e 1 0 ]
-"52 C:\Users\User\MPLABXProjects\Playground1.X\mcc_generated_files/interrupt_manager.c
-[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
-"58
-[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
 "50 C:\Users\User\MPLABXProjects\Playground1.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
-"59
+"57
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 "57 C:\Users\User\MPLABXProjects\Playground1.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
-"67 C:\Users\User\MPLABXProjects\Playground1.X\mcc_generated_files/tmr0.c
-[v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
-"97
-[v _TMR0_StartTimer TMR0_StartTimer `(v  1 e 1 0 ]
-"136
-[v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
-"154
-[v _TMR0_CallBack TMR0_CallBack `(v  1 e 1 0 ]
-"164
-[v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
-"168
-[v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
 "1971 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f14k50.h
 [v _WPUA WPUA `VEuc  1 e 1 @3959 ]
 "2004
@@ -114,31 +84,31 @@ mENUM_LcdMaxLines 5
 [v _ANSEL ANSEL `VEuc  1 e 1 @3966 ]
 "2172
 [v _ANSELH ANSELH `VEuc  1 e 1 @3967 ]
-[s S156 . 1 `uc 1 . 1 0 :4:0 
+[s S165 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 RB4 1 0 :1:4 
 `uc 1 RB5 1 0 :1:5 
 `uc 1 RB6 1 0 :1:6 
 `uc 1 RB7 1 0 :1:7 
 ]
 "2342
-[s S162 . 1 `uc 1 . 1 0 :4:0 
+[s S171 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 SDI 1 0 :1:4 
 `uc 1 RX 1 0 :1:5 
 `uc 1 SCL 1 0 :1:6 
 `uc 1 TX 1 0 :1:7 
 ]
-[s S168 . 1 `uc 1 . 1 0 :4:0 
+[s S177 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 SDA 1 0 :1:4 
 `uc 1 DT 1 0 :1:5 
 `uc 1 SCK 1 0 :1:6 
 `uc 1 CK 1 0 :1:7 
 ]
-[s S174 . 1 `uc 1 . 1 0 :4:0 
+[s S183 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 AN10 1 0 :1:4 
 `uc 1 AN11 1 0 :1:5 
 ]
-[u S178 . 1 `S156 1 . 1 0 `S162 1 . 1 0 `S168 1 . 1 0 `S174 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES178  1 e 1 @3969 ]
+[u S187 . 1 `S165 1 . 1 0 `S171 1 . 1 0 `S177 1 . 1 0 `S183 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES187  1 e 1 @3969 ]
 "2711
 [v _LATA LATA `VEuc  1 e 1 @3977 ]
 "2753
@@ -153,69 +123,17 @@ mENUM_LcdMaxLines 5
 [v _TRISC TRISC `VEuc  1 e 1 @3988 ]
 "3365
 [v _OSCTUNE OSCTUNE `VEuc  1 e 1 @3995 ]
-[s S553 . 1 `uc 1 NOT_BOR 1 0 :1:0 
-]
-"6370
-[s S555 . 1 `uc 1 . 1 0 :1:0 
-`uc 1 NOT_POR 1 0 :1:1 
-]
-[s S558 . 1 `uc 1 . 1 0 :2:0 
-`uc 1 NOT_PD 1 0 :1:2 
-]
-[s S561 . 1 `uc 1 . 1 0 :3:0 
-`uc 1 NOT_TO 1 0 :1:3 
-]
-[s S564 . 1 `uc 1 . 1 0 :4:0 
-`uc 1 NOT_RI 1 0 :1:4 
-]
-[s S567 . 1 `uc 1 nBOR 1 0 :1:0 
-`uc 1 nPOR 1 0 :1:1 
-`uc 1 nPD 1 0 :1:2 
-`uc 1 nTO 1 0 :1:3 
-`uc 1 nRI 1 0 :1:4 
-`uc 1 . 1 0 :1:5 
-`uc 1 SBOREN 1 0 :1:6 
-`uc 1 IPEN 1 0 :1:7 
-]
-[s S576 . 1 `uc 1 BOR 1 0 :1:0 
-`uc 1 POR 1 0 :1:1 
-`uc 1 PD 1 0 :1:2 
-`uc 1 TO 1 0 :1:3 
-`uc 1 RI 1 0 :1:4 
-]
-[u S582 . 1 `S553 1 . 1 0 `S555 1 . 1 0 `S558 1 . 1 0 `S561 1 . 1 0 `S564 1 . 1 0 `S567 1 . 1 0 `S576 1 . 1 0 ]
-[v _RCONbits RCONbits `VES582  1 e 1 @4048 ]
-[s S207 . 1 `uc 1 SWDTEN 1 0 :1:0 
+[s S148 . 1 `uc 1 SWDTEN 1 0 :1:0 
 ]
 "6473
-[s S209 . 1 `uc 1 SWDTE 1 0 :1:0 
+[s S150 . 1 `uc 1 SWDTE 1 0 :1:0 
 ]
-[u S211 . 1 `S207 1 . 1 0 `S209 1 . 1 0 ]
-[v _WDTCONbits WDTCONbits `VES211  1 e 1 @4049 ]
+[u S152 . 1 `S148 1 . 1 0 `S150 1 . 1 0 ]
+[v _WDTCONbits WDTCONbits `VES152  1 e 1 @4049 ]
 "6488
 [v _OSCCON2 OSCCON2 `VEuc  1 e 1 @4050 ]
 "6520
 [v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
-"6599
-[v _T0CON T0CON `VEuc  1 e 1 @4053 ]
-[s S456 . 1 `uc 1 T0PS 1 0 :3:0 
-`uc 1 PSA 1 0 :1:3 
-`uc 1 T0SE 1 0 :1:4 
-`uc 1 T0CS 1 0 :1:5 
-`uc 1 T08BIT 1 0 :1:6 
-`uc 1 TMR0ON 1 0 :1:7 
-]
-"6619
-[s S463 . 1 `uc 1 T0PS0 1 0 :1:0 
-`uc 1 T0PS1 1 0 :1:1 
-`uc 1 T0PS2 1 0 :1:2 
-]
-[u S467 . 1 `S456 1 . 1 0 `S463 1 . 1 0 ]
-[v _T0CONbits T0CONbits `VES467  1 e 1 @4053 ]
-"6676
-[v _TMR0L TMR0L `VEuc  1 e 1 @4054 ]
-"6683
-[v _TMR0H TMR0H `VEuc  1 e 1 @4055 ]
 [s S34 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 NOT_RABPU 1 0 :1:7 
 ]
@@ -279,149 +197,53 @@ mENUM_LcdMaxLines 5
 [v _VAR_LcdTrackLineNum_U8 VAR_LcdTrackLineNum_U8 `uc  1 e 1 0 ]
 "69
 [v _VAR_LcdTrackCursorPos_U8 VAR_LcdTrackCursorPos_U8 `uc  1 e 1 0 ]
-[s S297 . 3 `uc 1 mvar_MaxSupportedLines_U8 1 0 `uc 1 mvar_MaxSupportedChars_U8 1 1 `uc 1 mvar_LcdMode_U8 1 2 ]
+[s S233 . 3 `uc 1 mvar_MaxSupportedLines_U8 1 0 `uc 1 mvar_MaxSupportedChars_U8 1 1 `uc 1 mvar_LcdMode_U8 1 2 ]
 "70
-[v _STK_LCDConfig STK_LCDConfig `S297  1 e 3 0 ]
+[v _STK_LCDConfig STK_LCDConfig `S233  1 e 3 0 ]
 "71
 [v _ARR_LcdLineNumAddress_U8 ARR_LcdLineNumAddress_U8 `[5]uc  1 e 5 0 ]
-"58 C:\Users\User\MPLABXProjects\Playground1.X\mcc_generated_files/tmr0.c
-[v _TMR0_InterruptHandler TMR0_InterruptHandler `*.37(v  1 e 2 0 ]
-"60
-[v _timer0ReloadVal timer0ReloadVal `VEus  1 e 2 0 ]
-"12 C:\Users\User\MPLABXProjects\Playground1.X\main.c
+"7 C:\Users\User\MPLABXProjects\Playground1.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"43
-} 0
-"97 C:\Users\User\MPLABXProjects\Playground1.X\mcc_generated_files/tmr0.c
-[v _TMR0_StartTimer TMR0_StartTimer `(v  1 e 1 0 ]
-{
-"101
+"35
 } 0
 "50 C:\Users\User\MPLABXProjects\Playground1.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
-"57
-} 0
-"67 C:\Users\User\MPLABXProjects\Playground1.X\mcc_generated_files/tmr0.c
-[v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
-{
-"95
-} 0
-"164
-[v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
-{
-[v TMR0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 2 ]
-"166
+"55
 } 0
 "57 C:\Users\User\MPLABXProjects\Playground1.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
 "94
 } 0
-"59 C:\Users\User\MPLABXProjects\Playground1.X\mcc_generated_files/mcc.c
+"57 C:\Users\User\MPLABXProjects\Playground1.X\mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
-"67
+"65
 } 0
-"52 C:\Users\User\MPLABXProjects\Playground1.X\mcc_generated_files/interrupt_manager.c
-[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
-{
-"56
-} 0
-"79 C:\Users\User\MPLABXProjects\Playground1.X\HD44780.c
-[v _HD44780_writeString HD44780_writeString `(v  1 e 1 0 ]
-{
-[v HD44780_writeString@value value `*.25uc  1 p 2 6 ]
-"82
-} 0
-"117
-[v _HD44780_writeData HD44780_writeData `(v  1 e 1 0 ]
-{
-[v HD44780_writeData@value value `uc  1 a 1 wreg ]
-[v HD44780_writeData@value value `uc  1 a 1 wreg ]
-[v HD44780_writeData@value value `uc  1 a 1 5 ]
-"121
-} 0
-"149
-[v _select_data_register select_data_register `(v  1 e 1 0 ]
-{
-"151
-} 0
-"84
-[v _HD44780_setDisplayAddress HD44780_setDisplayAddress `(v  1 e 1 0 ]
-{
-[v HD44780_setDisplayAddress@value value `uc  1 a 1 wreg ]
-[v HD44780_setDisplayAddress@value value `uc  1 a 1 wreg ]
-[v HD44780_setDisplayAddress@value value `uc  1 a 1 6 ]
-"86
-} 0
-"51
+"16 C:\Users\User\MPLABXProjects\Playground1.X\HD44780.c
 [v _HD44780_init HD44780_init `(v  1 e 1 0 ]
 {
-"77
+"76
 } 0
-"111
-[v _HD44780_writeCommand HD44780_writeCommand `(v  1 e 1 0 ]
-{
-[v HD44780_writeCommand@value value `uc  1 a 1 wreg ]
-[v HD44780_writeCommand@value value `uc  1 a 1 wreg ]
-[v HD44780_writeCommand@value value `uc  1 a 1 5 ]
-"115
-} 0
-"137
+"92
 [v _write_mode_on write_mode_on `(v  1 e 1 0 ]
 {
-"139
+"94
 } 0
-"132
-[v _writeByte writeByte `(v  1 e 1 0 ]
-{
-[v writeByte@value value `uc  1 a 1 wreg ]
-[v writeByte@value value `uc  1 a 1 wreg ]
-[v writeByte@value value `uc  1 a 1 4 ]
-"135
-} 0
-"123
+"78
 [v _writeNibble writeNibble `(v  1 e 1 0 ]
 {
-[v writeNibble@value value `uc  1 a 1 wreg ]
-[v writeNibble@value value `uc  1 a 1 wreg ]
-[v writeNibble@value value `uc  1 a 1 3 ]
-"130
+"85
 } 0
-"153
+"108
 [v _enable_pulse enable_pulse `(v  1 e 1 0 ]
 {
-"157
+"112
 } 0
-"145
+"100
 [v _select_instruction_register select_instruction_register `(v  1 e 1 0 ]
 {
-"147
-} 0
-"58 C:\Users\User\MPLABXProjects\Playground1.X\mcc_generated_files/interrupt_manager.c
-[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
-{
-"69
-} 0
-"136 C:\Users\User\MPLABXProjects\Playground1.X\mcc_generated_files/tmr0.c
-[v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
-{
-"152
-} 0
-"154
-[v _TMR0_CallBack TMR0_CallBack `(v  1 e 1 0 ]
-{
-"162
-} 0
-"168
-[v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
-{
-"171
-} 0
-"7 C:\Users\User\MPLABXProjects\Playground1.X\main.c
-[v _WDT_LED_Timer_ISR WDT_LED_Timer_ISR `(v  1 e 1 0 ]
-{
-"10
+"102
 } 0

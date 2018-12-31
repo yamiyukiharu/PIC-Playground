@@ -1,33 +1,4 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"68 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 68: void SYSTEM_Initialize(void);
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"6466 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f14k50.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f14k50.h: 6466:     struct {
-[s S298 :1 `uc 1 ]
-[n S298 . SWDTEN ]
-"6469
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f14k50.h: 6469:     struct {
-[s S299 :1 `uc 1 ]
-[n S299 . SWDTE ]
-"6465
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f14k50.h: 6465: typedef union {
-[u S297 `S298 1 `S299 1 ]
-[n S297 . . . ]
-"6473
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f14k50.h: 6473: extern volatile WDTCONbits_t WDTCONbits __attribute__((address(0xFD1)));
-[v _WDTCONbits `VS297 ~T0 @X0 0 e@4049 ]
-[v F2750 `(v ~T0 @X0 1 tf1`ul ]
-"183 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18.h
-[v __delay `JF2750 ~T0 @X0 0 e ]
-[p i __delay ]
-"21 ./HD44780.h
-[; ;./HD44780.h: 21: void HD44780_init();
-[v _HD44780_init `(v ~T0 @X0 0 e? ]
-"166 ./lcd.h
-[; ;./lcd.h: 166: void LCD_DisplayChar( char var_lcdData_u8);
-[v _LCD_DisplayChar `(v ~T0 @X0 0 ef1`uc ]
 "8423 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f14k50.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f14k50.h: 8423: extern volatile __bit LATB7 __attribute__((address(0x7C57)));
 [v _LATB7 `Vb ~T0 @X0 0 e@31831 ]
@@ -54,6 +25,63 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2342
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f14k50.h: 2342: extern volatile PORTBbits_t PORTBbits __attribute__((address(0xF81)));
 [v _PORTBbits `VS101 ~T0 @X0 0 e@3969 ]
+[p mainexit ]
+"70 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 70: void SYSTEM_Initialize(void);
+[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+"6466 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f14k50.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f14k50.h: 6466:     struct {
+[s S298 :1 `uc 1 ]
+[n S298 . SWDTEN ]
+"6469
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f14k50.h: 6469:     struct {
+[s S299 :1 `uc 1 ]
+[n S299 . SWDTE ]
+"6465
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f14k50.h: 6465: typedef union {
+[u S297 `S298 1 `S299 1 ]
+[n S297 . . . ]
+"6473
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f14k50.h: 6473: extern volatile WDTCONbits_t WDTCONbits __attribute__((address(0xFD1)));
+[v _WDTCONbits `VS297 ~T0 @X0 0 e@4049 ]
+[v F2799 `(v ~T0 @X0 0 tf ]
+"332 ./mcc_generated_files/tmr0.h
+[; ;./mcc_generated_files/tmr0.h: 332:  void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
+[v _TMR0_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F2799 ]
+"135
+[; ;./mcc_generated_files/tmr0.h: 135: void TMR0_StartTimer(void);
+[v _TMR0_StartTimer `(v ~T0 @X0 0 ef ]
+"7116 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f14k50.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f14k50.h: 7116:     struct {
+[s S320 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S320 . RABIF INT0IF TMR0IF RABIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
+"7126
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f14k50.h: 7126:     struct {
+[s S321 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S321 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"7136
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f14k50.h: 7136:     struct {
+[s S322 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S322 . . GIEL GIEH ]
+"7115
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f14k50.h: 7115: typedef union {
+[u S319 `S320 1 `S321 1 `S322 1 ]
+[n S319 . . . . ]
+"7142
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f14k50.h: 7142: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
+[v _INTCONbits `VS319 ~T0 @X0 0 e@4082 ]
+"25 ./HD44780.h
+[; ;./HD44780.h: 25: void HD44780_init(void);
+[v _HD44780_init `(v ~T0 @X0 0 ef ]
+"30
+[; ;./HD44780.h: 30: void HD44780_writeString(char* value);
+[v _HD44780_writeString `(v ~T0 @X0 0 ef1`*uc ]
+"35
+[; ;./HD44780.h: 35: void HD44780_setDisplayAddress(uint8_t value);
+[v _HD44780_setDisplayAddress `(v ~T0 @X0 0 ef1`uc ]
+"27
+[; ;./HD44780.h: 27: void HD44780_writeData(uint8_t value);
+[v _HD44780_writeData `(v ~T0 @X0 0 ef1`uc ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f14k50.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f14k50.h: 54: __asm("UEP0 equ 0F53h");
 [; <" UEP0 equ 0F53h ;# ">
@@ -534,47 +562,73 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7419
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f14k50.h: 7419: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-[v $root$_main `(v ~T0 @X0 0 e ]
 "7 main.c
-[; ;main.c: 7: void main(void)
-[v _main `(v ~T0 @X0 1 ef ]
+[; ;main.c: 7: void WDT_LED_Timer_ISR(void) {
+[v _WDT_LED_Timer_ISR `(v ~T0 @X0 1 ef ]
+{
+[e :U _WDT_LED_Timer_ISR ]
+[f ]
 "8
-[; ;main.c: 8: {
+[; ;main.c: 8:     __asm(" clrwdt");
+[; <"  clrwdt ;# ">
+"9
+[; ;main.c: 9:     LATB7 = !PORTBbits.RB7;
+[e = _LATB7 ! != -> . . _PORTBbits 0 4 `i -> 0 `i ]
+"10
+[; ;main.c: 10: }
+[e :UE 327 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"12
+[; ;main.c: 12: void main(void)
+[v _main `(v ~T0 @X0 1 ef ]
+"13
+[; ;main.c: 13: {
 {
 [e :U _main ]
 [f ]
-"10
-[; ;main.c: 10:     SYSTEM_Initialize();
+"15
+[; ;main.c: 15:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"11
-[; ;main.c: 11:     WDTCONbits.SWDTEN = 0;
-[e = . . _WDTCONbits 0 0 -> -> 0 `i `uc ]
+"16
+[; ;main.c: 16:     WDTCONbits.SWDTEN = 1;
+[e = . . _WDTCONbits 0 0 -> -> 1 `i `uc ]
+"17
+[; ;main.c: 17:     TMR0_SetInterruptHandler(&WDT_LED_Timer_ISR);
+[e ( _TMR0_SetInterruptHandler (1 &U _WDT_LED_Timer_ISR ]
+"18
+[; ;main.c: 18:     TMR0_StartTimer();
+[e ( _TMR0_StartTimer ..  ]
+"23
+[; ;main.c: 23:     (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
 "26
-[; ;main.c: 26:     _delay((unsigned long)((150)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 150 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"27
-[; ;main.c: 27:     HD44780_init();
-[e ( _HD44780_init ..  ]
-"29
-[; ;main.c: 29:     LCD_DisplayChar('H');
-[e ( _LCD_DisplayChar (1 -> -> 72 `ui `uc ]
-"31
-[; ;main.c: 31:     while (1) {
-[e :U 329 ]
-{
-"32
-[; ;main.c: 32:         LATB7 = !PORTBbits.RB7;
-[e = _LATB7 ! != -> . . _PORTBbits 0 4 `i -> 0 `i ]
+[; ;main.c: 26:     (INTCONbits.PEIE = 1);
+[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
 "33
-[; ;main.c: 33:         _delay((unsigned long)((100)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[; ;main.c: 33:     HD44780_init();
+[e ( _HD44780_init ..  ]
 "34
-[; ;main.c: 34:     }
-}
-[e :U 328 ]
-[e $U 329  ]
+[; ;main.c: 34:     HD44780_writeString("Hello World!");
+[e ( _HD44780_writeString (1 :s 1C ]
+"38
+[; ;main.c: 38:     HD44780_setDisplayAddress(0x40);
+[e ( _HD44780_setDisplayAddress (1 -> -> 64 `i `uc ]
+"39
+[; ;main.c: 39:     HD44780_writeData('C');
+[e ( _HD44780_writeData (1 -> -> 67 `ui `uc ]
+"40
+[; ;main.c: 40:     while (1) {
 [e :U 330 ]
-"35
-[; ;main.c: 35: }
-[e :UE 327 ]
+{
+"42
+[; ;main.c: 42:     }
 }
+[e :U 329 ]
+[e $U 330  ]
+[e :U 331 ]
+"43
+[; ;main.c: 43: }
+[e :UE 328 ]
+}
+[a 1C 72 101 108 108 111 32 87 111 114 108 100 33 0 ]
